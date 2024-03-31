@@ -12,6 +12,7 @@
       font-size: 60px;
       justify-content: center;
       align-items: center;
+      user-select: none;
       }
     
       p {
@@ -73,7 +74,36 @@
         }
       }
   </style>
-	<body>
-   <p title="hello?">hello?</p> 
-	</body>
+	 <body>
+   <p id="text" title="hello?">hello?</p>   
+   <script>
+    let click = 0
+    const para = document.getElementById("text")
+    window.onclick = () => {
+      if (click <= 4) {
+        if (click === 0) {
+          para.innerText = ""
+        }
+        if (click < 4) {click ++}
+          if (click === 1) {
+            para.title ="where am i?"
+            para.innerText = "where am i?"
+          }
+          if (click === 2) {
+            para.title = "is anyone there?"
+            para.innerText = "is anyone there?"
+          }
+        if (click === 3) {
+          para.title = "it's so dark..."
+          para.innerText = "it's so dark..." 
+        }
+        if (click === 4) {
+          para.title = "please... help me..."
+          para.innerText = "please... help me..."
+        }
+      }
+    }
+    
+   </script>
+	 </body>
 </html>
